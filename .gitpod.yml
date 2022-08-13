@@ -1,7 +1,8 @@
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - before: sudo apt update -y
-    init: sudo apt install maven mysql-server -y
+    init: sudo apt-get install maven && sudo apt-get purge mysql* && sudo apt-get install mysql-server
+
     command: sudo mysql_secure_installation && sudo service mysql start && mysql -u root -p root@123 && "CREATE DATABASE notes;" && "exit;" && mvn spring-boot:run
 
 
