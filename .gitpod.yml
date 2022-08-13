@@ -1,7 +1,7 @@
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - before: sudo apt update -y && docker network create notes-mysql
-    init: sudo apt-get install maven -y && docker run --name mysql --network notes-mysql -e MYSQL_ROOT_PASSWORD= -d mysql
+    init: sudo apt-get install maven -y && docker run --name mysql --network notes-mysql MYSQL_DATABASE=bootdb -e MYSQL_ROOT_PASSWORD= -d mysql
     command: mvn spring-boot:run
 
 
