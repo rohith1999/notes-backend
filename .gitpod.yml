@@ -1,7 +1,7 @@
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - before: sudo apt update -y && sudo apt-get upgrade -fy
-    init: sudo apt-get install maven -y && sudo apt-get install mysql-server -y && sudo service mysql start && sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by 'root@123';" && sudo mysql -e "create database notes;" 
+    init: sudo apt-get install maven -y && sudo apt-get install mysql-server -y && sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by 'root@123';" && sudo mysql -e "create database notes;" 
     command: mvn spring-boot:run
 
 
